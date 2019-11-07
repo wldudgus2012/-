@@ -1,0 +1,162 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>ZingSoft Demo</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/codingBooster.css">
+        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    </head>
+     <style>
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+     
+            #myChart {
+                height: 100%;
+                width: 100%;
+                min-height: 150px;
+            }
+     
+            .zc-ref {
+                display: none;
+            }
+     
+            zing-grid[loading] {
+                height: 800px;
+            }
+        </style>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">코딩 부스터</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">소개<span class="sr-=only"></span></a></li>
+                        <li><a href="instructor.html">강사진</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="lecture.html?lectureName=C">C언어</a></li>
+                                <li><a href="lecture.html?lectureName=Java">자바</a></li>
+                                <li><a href="lecture.html?lectureName=Android">안드로이드</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="내용을 입력하세요.">
+                        </div>
+                        <button type="submit" class="btn btn-default">검색</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="loginForm.html">로그인</a></li>
+                                <li><a href="registerForm.html">회원가입</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+          <div class="container">
+            <div class="row">
+                <div class="col-xs-14">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;&nbsp;구글 트렌드
+                            </h3>
+                        </div>  
+                        <div class="panel-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                              <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1845_RC03/embed_loader.js"></script>
+                              <script type="text/javascript">
+                                trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"맹구","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=%EB%A7%B9%EA%B5%AC&geo=KR&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"});
+                              </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;&nbsp;워드 클라우드 #sports
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="myChart"></div>
+                                <script>
+                                    ZC.LICENSE = ["b55b025e438fa8a98e32482b5f768ff5"];
+                                    var myConfig = {
+                                        type: 'wordcloud',
+                                        options: {
+                                            text: '#adrenalinejunkies #basketball #sports #kyrieirving #lakers #cavs #jamesharden #lalakers #kobe #dunk #nba #nbatv #espn #nike #ballislife #bball #kd #adidas #russellwestbrook #mj #warriors #jumpman #kobebryant #lebronjames #2k #nbafinals #2k17 #stephcurry #michaeljordan #likewho #workout #strong #athlete #insane #soccer #football #baseball #demarderozan #torontoraptors #raptors #toronto #allsportsnews #sportsnews #breakingnews #newsand #nbamemesquad #lebron #nfl #cleveland #cavaliers #dubnation #curry #theland #mvp #stephencurry #kyrie #kingjames #striveforgreatness #clevelandcavaliers #knicks #gym #goals #motivation #justdoit #instafit #kettlebell #kettlebellworkout #workouts #beawesome #dedication #discipline #progress #results #fitness #fitfam #sweat #sore #battleropes #fitspo #instafitness #training #gymlife #trx #trxworkout #abs #squats #healthy #healthylifestyle #health #food #coffee #confident #changeyourself #recovery #bodycheck #slim #energia #redukcja #bodybuilding #fitlover #meme #memes #funny #hilarious #lmao #lol #dankmemes #dank #edgy #memesdaily #anime #mlg #cringe #ayylmao #4chan #reddit #relatable #stupid #instagram #twitter #trump #trending #dumb #esports #edits #dontscrewup #game #games #gamer #gameday #playstore #play #app #apk #sport #sporty #best #score #repost #sbz #strongbyzumba #sync #ankara #adana #izmir #2018 #fit #cardio #crosfit #muscle #fitgirl #sixpack #odtü #spa #starwars #zumba #ufc #драка #нокаут #бокс #бои #mma #martialarts #mixedmartialarts #boxing #kickboxing #muaythai #wrestling #judo #karate #taekwondo #bjj #jiujitsu #combat #alpha #savage #respect #swag #fitnessmotivation #fight #fighting #knockout #kono #exercise #tb #tbt #wiwt #swimming #hotel #feelgreat #trainright #picoftheday #instagood #fitboy #bestoftheday #arm #photooftheday #pullups #amazing #trainhard #pain #trainhardorgohome #lovefitness #flex #grindout #gymlifesometimes #skiingislife #skiing🎿 #skiingisfun #skiingtrip #skiingholiday #skiingday #skiingtime #skiing⛷ #skiinglife #skiingpowder #skiingismylife #skiingwithfriends #sportswear #sportlife #sportster #skiingseason #skiingforlife #youtube #sub4sub #subforsub #runforlife #runtoinspire #running #run #runningman #instarunner #holland #netherlands #amsterdam #influencer #sportsday #hardlopen #rennen #fitdutchies #instagramfitness #instadaily #youtuber #blueeyes #model #love #insta #picofthedayalmost #alabama #rolltide #clemson #tiger #ncaa #college #fun #happy #igers #ig_shotz #champs #sec #nationalchampionship #cbs #fox #dreams #podcast #production #broadcast #journalism #atlanta #womenempowerment #womenbjj #bjjwomen #bjjgirls #girlsbjj #takip #diet #girl #tagforlike #likeforlike #nutrition #light #traveling #diyetekibi #spor #yürüyüş #pilates #yoga #eatingdisorders #instapic #instamood #coffeetime #beautiful #nicepic #detoks #smothie #travelgram #kitap #kahve #lake #track ', minLength: 2
+                                        }
+                                    };
+                             
+                                    zingchart.render({
+                                        id: 'myChart',
+                                        data: myConfig,
+                                        height: 400,
+                                        width: '100%'
+                                    });
+                                </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer style="background-color: #000000; color: #ffffff">
+            <div class="container">
+                <br>
+                <div class="row">
+                    <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2019</h5><h5>지영현(YoungHyun Ji)</h5></div>
+                    <div class="col-sm-4"><h4>대표자 소개</h4><p>저는 코딩 부스터의 학생 지영현입니다. 졸업작품을 빡쎄게 조지고 있습니다.</p></div>
+                    <div class="col-sm-2"><h4 style="text-align: center;">내비게이션</h4>
+                        <div class="list-group">
+                            <a href="index.html" class="list-group-item">소개</a>
+                            <a href="insturctor.html" class="list-group-item">강사진</a>
+                            <a href="lecture.html" class="list-group-item">강의</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
+                        <div class="list-group">
+                            <a href="https://www.facebook.com/dongbin.na" class="list-group-item">페이스북</a>
+                            <a href="https://www.youtube.com" class="list-group-item">유튜브</a>
+                            <a href="https://www.naver.com" class="list-group-item">네이버</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;by 지영현</h4></div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+    </html>
+

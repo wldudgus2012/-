@@ -1,0 +1,86 @@
+header {
+    background: #1f182a;
+    height: 120px;
+}
+
+
+header .navbar-wrap {
+  display: block;
+}
+
+header .navbar-header {
+    position: relative;
+    height: 120px;
+}
+
+header .nabar-top {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+header .logo {
+    display: inline-block;
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    z-index: 100;
+}
+
+header .search-box {
+    position: absolute;
+    padding: 35px 0 0 255px;
+}
+
+header .navbar-bottom {
+    padding-top: 1px;
+    position: relative;
+    background: #2b40b4;
+}
+
+header .search {
+  outline: none;
+    padding: 12px 38px 12px 20px;
+    border-radius: 25px;
+    background: #fff url(http://some.co.kr/images/icon_search.png) 96% 50% no-repeat;
+    font-size: 18px;
+}
+
+header .gnb-menu {
+  background: #b1baed;
+  width: 190px;
+  float: left;
+}
+
+.index {
+  background-color: rgb(245, 245, 245);
+}
+
+.containers {
+  position: relative;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.containers .containers-top {
+  height: 50px
+}
+
+.containers .chart-wrap {
+  background: #fff;
+  border: 1px solid #d6d6e9;
+  margin-right: 5px;
+}
+
+.containers .chart-wrap .chart-title {
+  position: relative;
+    font-size: 20px;
+    margin: 24px 28px;
+    font-family: 'NanumGothicBold';
+    color: #9694a4
+}
+
+.containers .chart-wrap .graph_box {
+  padding: 10px 24px;
+  text-align: center;
+}

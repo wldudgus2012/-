@@ -1,0 +1,565 @@
+<!DOCTYPE html5>
+<!--
+8 888888888o   8 8888                  .8.              ,o888888o.    8 8888     ,88' 8 8888     ,88'  8 8888 `8.`888b                 ,8'  8 8888
+8 8888    `88. 8 8888                 .888.            8888     `88.  8 8888    ,88'  8 8888    ,88'   8 8888  `8.`888b               ,8'   8 8888
+8 8888     `88 8 8888                :88888.        ,8 8888       `8. 8 8888   ,88'   8 8888   ,88'    8 8888   `8.`888b             ,8'    8 8888
+8 8888     ,88 8 8888               . `88888.       88 8888           8 8888  ,88'    8 8888  ,88'     8 8888    `8.`888b     .b    ,8'     8 8888
+8 8888.   ,88' 8 8888              .8. `88888.      88 8888           8 8888 ,88'     8 8888 ,88'      8 8888     `8.`888b    88b  ,8'      8 8888
+8 8888888888   8 8888             .8`8. `88888.     88 8888           8 8888 88'      8 8888 88'       8 8888      `8.`888b .`888b,8'       8 8888
+8 8888    `88. 8 8888            .8' `8. `88888.    88 8888           8 888888<       8 888888<        8 8888       `8.`888b8.`8888'        8 8888
+8 8888      88 8 8888           .8'   `8. `88888.   `8 8888       .8' 8 8888 `Y8.     8 8888 `Y8.      8 8888        `8.`888`8.`88'         8 8888
+8 8888    ,88' 8 8888          .888888888. `88888.     8888     ,88'  8 8888   `Y8.   8 8888   `Y8.    8 8888         `8.`8' `8,`'          8 8888
+8 888888888P   8 888888888888 .8'       `8. `88888.     `8888888P'    8 8888     `Y8. 8 8888     `Y8.  8 8888          `8.`   `8'           8 8888
+  Copyright 2019. BLACKKIWI. All rights reserved.
+-->
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140736842-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-140736842-1');
+    </script>
+    <!-- Naver Analytics -->
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+      if(!wcs_add) var wcs_add = {};
+      wcs_add["wa"] = "23e220a1909a34";
+      wcs_do();
+    </script>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name = "keywords" content = "키워드, 월간 검색량, 검색 트렌드, 검색 동향, 월별 검색량, 키워드 조회량">
+    <meta name = "description" content = "내 관심 키워드가 언제 가장 많이 검색되고, 어떤 연령층에게 가장 인기있는지를 알아보세요.">
+    <meta name = "robots" content = "noindex,nofollow">
+    <meta property = "og:type" content = "website" />
+    <meta property = "og:site_name" content = "블랙키위" />
+    <meta property = "og:title" content = "키워드 '감자' 통계" >
+    <meta property = "og:description" content = "감자(이)라는 키워드가 얼마나 검색되는지 알아보세요." >
+    <meta property = "og:image" content = "https://blackkiwi.net/blackkiwi3.svg" >
+    <meta property = "og:url" content = "https://blackkiwi.net/"/>
+    <title>블랙키위 · 키워드 검색 결과</title>
+    <link rel = "apple-touch-icon" href = "blackkiwi.png"/>
+    <link rel = "shortcut icon" type = "image⁄x-icon" href = "blackkiwi.png">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" href = "common.css">
+    <link rel = "stylesheet" href = "result.css">
+    <script>
+      var device  = 'PC';
+      var keyword = '감자';
+      var isSavedKeyword = 'false';
+      var accumVolume = '0';
+    </script>
+  </head>
+  <body>
+    <!-- 화면 커버 -->
+    <div id = "result_cover">
+    </div>
+    <!-- 공유하기 모달 -->
+    <div id = "share_wrap">
+      <i class = "fa fa-times" aria-hidden="true"></i>
+      <div id = "share_wrap_header">SNS 공유하기</div>
+      <div id = "share_wrap_icon">
+        <img class = "social_icon" src = "facebook_icon.png" alt = "페이스북 공유하기 아이콘">
+        <img class = "social_icon" src = "twitter_icon.png" alt = "트위터 공유하기 아이콘">
+        <img class = "social_icon" id = "kakao-link-btn" src = "kakao_icon.png" alt = "카카오 공유하기 아이콘">
+      </div>
+      <div id = "share_wrap_uri">
+        <div id = "share_wrap_uri_text">
+          <div id = "share_gradient"></div>
+          <div id = "share_tooltip"></div>
+        </div>
+        <div id = "share_wrap_uri_btn">URI 복사</div>
+      </div>
+    </div>
+    <!-- blog extra Modal -->
+    <div class = "modal fade" id = "blog_extra_modal" tabindex = "-1" role = "dialog" aria-labelledby = "myModalLabel" aria-hidden = "true">
+      <div class = "modal-dialog">
+        <div class = "modal-content">
+          <div class = "modal-header">
+            <button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">
+              <span aria-hidden = "true">
+                <i class = "fa fa-times" aria-hidden="true"></i>
+              </span>
+            </button>
+            <h4 class = "modal-title" id = "myModalLabel">상위 노출 블로그 정보</h4>
+          </div>
+          <div class = "modal-body">
+            키워드 <span class = "emphasis_font">"감자"</span> 네이버 통합 검색 시 첫 페이지에 노출되는 블로그들의 정보입니다.
+            <div = class = "small_margin"></div>
+            <table>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 로딩 화면 -->
+    <div id = "loading_wrap">
+      <img src = "loading.svg" alt = "페이지 로딩">
+      <div class = "small_margin"></div>
+      <span id = "loading_coment"></span>
+      <span id = "adult_notice"></span>
+      <div class = "small_margin"></div>
+      <span id = "elapse_count"></span>
+    </div>
+    <!-- main_wrap -->
+    <div id = "main_wrap">
+      <div id = "head_wrap">
+  <div id = "logo_wrap">
+    <img id = "logo_img" src = "blackkiwi3.svg" class = "img-responsive" alt = "블랙 키위">
+  </div>
+  <div id = "ad_wrap">
+    <img src = "">
+  </div>
+  <div id = "mobile_main_text">
+    빅데이터 기반 키워드 통계, 분석 서비스
+  </div>
+  <div id = "search_wrap">
+    <div id = "search_group">
+      <form autocomplete = "off">
+        <!-- form안의 input이 한개일 때 input에서 엔터를 치면 자동으로 submit이 되는 현상때문에 input 하나를 추가하고 숨겨놓음-->
+        <input type="text" style = "display: none;" />
+        <input
+          id = "search_field"
+          type = "search"
+          placeholder = "관심 키워드를 입력하세요."
+          maxlength = "20" autocapitalize = "off"
+        />
+        <!-- onfocus="this.value = this.value;" -->
+      </form>
+      <button id = "search_btn">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id = "search_log">
+    </div>
+    <div id = "search_result_text">
+      <div id = "search_count"></div>
+      <!-- <div id = "search_category">
+        <div id = "search_category_naver">Based on NAVER</div>
+        &nbsp;|&nbsp;
+        <div id = "search_category_google">Based on Google</div>
+        &nbsp;|&nbsp;
+        <div id = "search_category_others">Based on BLACKKIWI</div>
+      </div> -->
+    </div>
+    <div id = "recommended_text">혹시 <a href = "#">페이커</a>(을)를 검색하려고 하셨나요?</div>
+  </div>
+</div>
+
+      <!-- 상단 고정 헤더 -->
+      <div id = "fixed_header">
+        <span>키워드 <font class = "keyword_emphasis"></font> 검색 결과</span>
+        <button><img src = "share_icon.png" alt = "검색 결과 공유하기 아이콘"></button>
+      </div>
+      <div id = "result_wrap">
+        <!-- 연관 키워드 -->
+        <div id = "associative_keywords" class = "result_box">
+          <div class = "result_box_title">
+            <span>연관 키워드</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "연관 키워드"
+              data-content = "
+              검색 키워드와 관련도가 높은 키워드입니다.<br>
+              <span class = 'popover_info'>검색량 순으로 정렬됨</span>
+              "
+              data-placement = "top">
+            </i>
+            <span id = "associative_keywords_switch_btn" class = "table_btn color_text" title = "표로 전환"><i class = "fa fa-th" aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <!-- 유사 키워드 -->
+        <div id = "similar_keywords" class = "result_box">
+          <div class = "result_box_title">
+            <span>유사 키워드</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "유사 키워드"
+              data-content = "
+              검색 키워드와 철자가 유사한 키워드입니다.<br>
+              <span class = 'popover_info'>검색량 순으로 정렬됨</span>
+              "
+              data-placement = "top">
+            </i>
+            <span id = "similar_keywords_switch_btn" class = "table_btn color_text" title = "표로 전환"><i class = "fa fa-th" aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <!-- 월간 검색량 -->
+        <div id = "monthly_search_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span>월간 검색량</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "월간 검색량"
+              data-content = ""
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "monthly_search_volume_pc">
+            <img src = "pc_icon2.svg" alt = "pc 검색량">
+            <br>
+            <span>PC</span>
+            <div class = "small_margin"></div>
+            <span class = "color_text">934,000</span>
+          </div>
+          <div id = "monthly_search_volume_mobile">
+            <img src = "mobile_icon2.svg" alt = "mobile 검색량">
+            <br>
+            <span>Mobile</span>
+            <div class = "small_margin"></div>
+            <span class = "color_text">1,540,000</span>
+          </div>
+          <div class = "small_margin"></div>
+        </div>
+        <!-- 관련 컨텐츠 발행량 -->
+        <div id = "related_content_issue_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span>월간 컨텐츠 발행량</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "월간 컨텐츠 발행량"
+              data-content = ""
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "related_content_issue_volume_blog">
+            <img src = "document_icon.svg" alt = "블로그 발행량">
+            <br>
+            <span>블로그</span>
+            <div class = "small_margin"></div>
+            <span class = "color_text">50,000</span>
+          </div>
+          <div id = "related_content_issue_volume_cafe">
+            <img src = "document_icon.svg" alt = "카페 발행량">
+            <br>
+            <span>카페</span>
+            <div class = "small_margin"></div>
+            <span class = "color_text">3,454</span>
+          </div>
+          <div id = "related_content_issue_volume_website">
+            <img src = "document_icon.svg" alt = "웹사이트 발행량">
+            <br>
+            <span>웹 사이트</span>
+            <div class = "small_margin"></div>
+            <span class = "color_text">72,983</span>
+          </div>
+          <div class = "small_margin"></div>
+        </div>
+        <!-- 예상 검색량 -->
+        <div id = "predict_search_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span id = "predict_search_volume_month">당월 예상 검색량</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              title = "예상 검색량"
+              data-html = "true"
+              data-content = ""
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "predict_search_volume_content">
+            <div id = "current_wrap">
+              <img src = "graph_icon.svg" alt = "웹사이트 발행량">
+              <br>
+              <b><span id = "month_current" ></span>까지 실제 검색량</b>
+              <br>
+              <span id = "current_volume" class = "color_text">3,640</span>
+            </div>
+            <div id = "predict_wrap">
+              <img src = "search_icon.svg" alt = "웹사이트 발행량">
+              <br>
+              <b><span id = "month_end" ></span>까지 예상되는 검색량</b>
+              <br>
+              <span id = "predict_volume" class = "color_text">12,400</span>
+            </div>
+          </div>
+        </div>
+        <!-- 키워드 포화 지수 -->
+        <div id = "keyword_saturation_figure" class = "result_box">
+          <div class = "result_box_title">
+            <span>키워드 포화 지수</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "키워드 포화 지수"
+              data-content = ""
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "keyword_saturation_figure_content">
+            <div class = "saturation_box">
+              <img src = "medal_icon.svg" alt = "종합 포화지수">
+              <br>
+              <span class = "saturation_box_title">종합 지수</span><br>
+              <span id = "total_figure">포화 지수</span>
+            </div>
+            <div class = "saturation_box">
+              <img src = "document_icon.svg" alt = "종합 포화지수">
+              <br>
+              <span class = "saturation_box_title">블로그</span><br>
+              <span id = "blog_figure">포화 지수</span>
+            </div>
+            <div class = "saturation_box">
+              <img src = "document_icon.svg" alt = "종합 포화지수">
+              <br>
+              <span class = "saturation_box_title">카페</span><br>
+              <span id = "cafe_figure">포화 지수</span>
+            </div>
+            <div class = "saturation_box">
+              <img src = "document_icon.svg" alt = "종합 포화지수">
+              <br>
+              <span class = "saturation_box_title">웹 사이트</span><br>
+              <span id = "website_figure">포화 지수</span>
+            </div>
+          </div>
+        </div>
+        <!-- 검색 동향 -->
+        <div id = "search_trend" class = "result_box">
+          <div class = "result_box_title">
+            <span>검색 동향</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              title = "검색 동향"
+              data-content = "최근 1년간의 키워드 검색 동향을 반영한 선형 그래프입니다."
+              data-placement = "top">
+            </i>
+          </div>
+          <span class = "chart_subtitle">1K = 1,000 · 1M = 1,000,000</span>
+          <div id = "search_trend_chart">
+          </div>
+        </div>
+        <!-- 월별 검색 비율 -->
+        <div id = "month_to_month_search_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span>월별 검색 비율</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              title = "월별 검색 비율"
+              data-html = "true"
+              data-content = "
+              검색 동향과는 다르게 2016년 ~ 현재까지 데이터를 종합한 결과입니다.<br>
+              가장 검색량이 많은 달이 100, 나머지 값은 100에 대한 상대값입니다.<br>
+              특정 이슈로 인해 검색량이 비정상적으로 증가한 날은 통계 대상에서 제외됩니다.<br>
+              <span class = 'popover_info'>월간 검색량이 1,000 이상인 키워드에만 제공되는 정보입니다.</span>
+              "
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "month_to_month_search_volume_chart">
+          </div>
+        </div>
+        <!-- 주말 / 평일 검색 비율 -->
+        <div id = "weekend_weekday_search_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span>주말/평일 검색 비율</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              title = "주말/평일 검색 비율"
+              data-html = "true"
+              data-content = "
+              키워드 검색량의 주말/평일 비율입니다.<br>
+              <span class = 'popover_info'>월간 검색량이 1,000 이상인 키워드에만 제공되는 정보입니다.</span>
+              "
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "weekend_weekday_search_volume_chart">
+          </div>
+        </div>
+        <!-- 연령별 검색량 비율 -->
+        <div id = "age_search_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span>연령별 검색 비율</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "연령별 검색 비율"
+              data-content = "
+              키워드 검색량의 연령별 비율입니다.<br>
+              <a href = 'help?i=3' target = '_blank'># 월간 검색량과 차이 나는 이유</a>
+              "
+              data-placement = "top">
+            </i>
+          </div>
+          <span class = "chart_subtitle">1K = 1,000 · 1M = 1,000,000</span>
+          <div id = "age_search_volume_chart">
+          </div>
+        </div>
+        <!-- 성별 검색량 비율 -->
+        <div id = "gender_search_volume" class = "result_box">
+          <div class = "result_box_title">
+            <span>성별 검색 비율</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "성별 검색 비율"
+              data-content = "
+              키워드 검색량의 성별 비율입니다.
+              "
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "gender_search_volume_chart">
+          </div>
+        </div>
+        <!-- 최고의 타겟 (가장 많이 검색한 사람) -->
+        <div id = "most_searched_person" class = "result_box">
+          <div class = "result_box_title">
+            <span>최고의 타겟</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              title = "최고의 타겟"
+              data-content = "최근 한달간 해당 키워드를 가장 많이 검색한 타겟입니다."
+              data-placement = "top">
+            </i>
+          </div>
+          <span id = "most_searched_person_content">
+            해당 키워드는 <font class = "emphasis_font color_text"></font>세 <font class = "emphasis_font color_text"></font>에게 가장 인기 있습니다.
+          </span>
+        </div>
+        <!-- 무관심 타겟 (가장 적게 검색한 사람) -->
+        <div id = "least_searched_person" class = "result_box">
+          <div class = "result_box_title">
+            <span>무관심 타겟</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              title = "무관심 타겟"
+              data-content = "최근 한달간 해당 키워드를 가장 적게 검색한 타겟입니다."
+              data-placement = "top">
+            </i>
+          </div>
+          <span id = "least_searched_person_content">
+            <font class = "emphasis_font color_text"></font>세 <font class = "emphasis_font color_text"></font>이 해당 키워드에 가장 관심 없습니다.
+          </span>
+        </div>
+        <!-- 각 배치 영역 순서 -->
+        <div id = "section_layout_order" class = "result_box">
+          <div class = "result_box_title">
+            <span>섹션 배치 순서</span>
+            <i
+              class = "fa fa-question-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "섹션 배치 순서"
+              data-content = "
+              네이버 통합 검색시 블로그, 지식인, 뉴스등의 섹션이 배치되는 순서입니다.<br>
+              VIEW는 블로그+카페+네이버 포스트입니다.<br>
+              <a href = 'help?i=4' target = '_blank'># 자세히 보기</a>"
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "section_layout_order_pc">
+            <img src = "pc_icon2.svg" alt = "pc 배치 순서" style = "margin-left:3px;">
+            <br>
+            <span>PC</span>
+            <div class = "small_margin"></div>
+            <div id = "section_pc">
+            </div>
+          </div>
+          <div id = "section_layout_order_mobile">
+            <img src = "mobile_icon2.svg" alt = "mobile 배치 순서">
+            <br>
+            <span>Mobile</span>
+            <div class = "small_margin"></div>
+            <div id = "section_mobile">
+            </div>
+          </div>
+        </div>
+        <!-- pdf 파일 다운로드 -->
+        <div id = "pdf_download" class = "result_box">
+          <div class = "result_box_title">
+            결과를 파일로 다운로드
+            <i
+              class = "fa fa-info-circle popover_i"
+              aria-hidden = "true"
+              data-toggle = "popover"
+              data-html = "true"
+              title = "Notice"
+              data-content = "
+              지원 브라우저 : Google Chrome, Edge, Firefox 3.5+, Opera 12+, Safari 6+
+              <div class = 'small_margin'></div>
+              NAVER의 <a target = '_blank' href = 'https://blog.naver.com/n_cloudplatform/221054302787'><i class='fa fa-shield' id = 'shield' aria-hidden='true'></i> Site Safer</a>를 통해 주기적으로 악성코드 배포 여부를 검사합니다.
+              "
+              data-placement = "top">
+            </i>
+          </div>
+          <div id = "pdf_download_btn" class = "download_box">
+            <span></span>
+          </div>
+        </div>
+      </div> <!-- result_wrap -->
+    </div> <!-- main_wrap -->
+    <div id = "foot_wrap">
+  <img id = "foot_logo" src = "blackkiwi1.png" class = "img-responsive" alt = "블랙 키위 로고">
+  <a href = "about-blackkiwi#about_head_wrap">About BLACKKIWI</a>
+  &nbsp; · &nbsp;
+  <a href = "privacy-statement"><strong>개인정보처리방침</strong></a>
+  &nbsp; · &nbsp;
+  제작자 : 권기웅(Mosball)
+  
+    &nbsp; · &nbsp;
+  
+  <a href = "https://blog.naver.com/rnjsrldnd123/221540315470" target = "_blank" >블로그</a>
+  &nbsp; · &nbsp;
+  <a href = "mailto:rnjsrldnd123@naver.com" >문의/피드백</a>
+  &nbsp; · &nbsp;
+  <a href = "help" >도움말</a>
+  
+    <span id = "theme_blank"></span>
+  
+  <br>
+  Copyright 2019. BLACKKIWI. All rights reserved.
+  <br>
+  Data based on NAVER.
+</div>
+
+    <script type = "text/javascript" src = "jquery-3.4.1.min.js"></script>
+    <script type = "text/javascript" src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script> <!-- 구글 차트 라이브러리 -->
+    <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> <!-- pdf변환 라이브러리 -->
+    <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script> <!-- 언더스코어 -->
+    <script type = "text/javascript" src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script> <!-- 카카오 공유하기 -->
+    <script type = "text/javascript" src = "html2canvas-1.0-alpha12.min.js"></script> <!-- html 캔버스 변환 라이브러리 -->
+    <script type = "text/javascript" src = "copy2clipboard.js"></script> <!--클립보드 복사-->
+    <script type = "text/javascript" src = "common.js"></script>
+    <script type = "text/javascript" src = "chart.js"></script>
+    <script type = "text/javascript" src = "result.js"></script>
+    <script type = "text/javascript" src = "exportFile.js"></script>
+  </body>
+</html>

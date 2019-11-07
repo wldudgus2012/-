@@ -1,0 +1,163 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>ZingSoft Demo</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/codingBooster.css">
+        <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    </head>
+     <style>
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+     
+            #myChart {
+                height: 100%;
+                width: 100%;
+                min-height: 150px;
+            }
+     
+            .zc-ref {
+                display: none;
+            }
+     
+            zing-grid[loading] {
+                height: 800px;
+            }
+        </style>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">코딩 부스터</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">소개<span class="sr-=only"></span></a></li>
+                        <li><a href="instructor.html">강사진</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">강의<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="lecture.html?lectureName=C">C언어</a></li>
+                                <li><a href="lecture.html?lectureName=Java">자바</a></li>
+                                <li><a href="lecture.html?lectureName=Android">안드로이드</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="내용을 입력하세요.">
+                        </div>
+                        <button type="submit" class="btn btn-default">검색</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="loginForm.html">로그인</a></li>
+                                <li><a href="registerForm.html">회원가입</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+          <div class="container">
+            <div class="row">
+                <div class="col-xs-14">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;&nbsp;구글 트렌드
+                            </h3>
+                        </div>  
+                        <div class="panel-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                              <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1845_RC03/embed_loader.js"></script>
+                              <script type="text/javascript">
+                                trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"축구","geo":"KR","time":"today 12-m"}],"category":0,"property":""}, {"exploreQuery":"q=%EB%A7%B9%EA%B5%AC&geo=KR&date=today 12-m","guestPath":"https://trends.google.co.kr:443/trends/embed/"});
+                              </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="glyphicon glyphicon-tags"></span>
+                                &nbsp;&nbsp;워드 클라우드
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="myChart"></div>
+                                <script>
+                                    ZC.LICENSE = ["b55b025e438fa8a98e32482b5f768ff5"];
+                                    var myConfig = {
+                                        type: 'wordcloud',
+                                        options: {
+                                            text: '이강인(18·발렌시아)이 20살 이하 월드컵 골든볼의 주인공이 됐다.이강인은 16일(한국시각) 폴란드 우치 경기장에서 열린 2019 국제축구연맹(FIFA) 20살 이하(U-20) 월드컵에서 최우수선수에 주어지는 골든볼을 수상했다. 한국 남자선수가 피파 주관대회에서 골든볼을 받은 것은 처음이다.앞서 2010년 17살 이하 여자월드컵에서 여민지가 골든볼을 받았고, 2010 20살 이하 여자월드컵에서 지소연이 실버볼을 받았다. 남자축구에서는 홍명보 축구협회 전무가 2002 한일월드컵 때 브론즈볼을 받은 바 있다.이강인은 사상 최초로 골든볼을 수상하면서 국제 무대에서 확실하게 자신의 존재감을 과시했다. 역대 20살 이하 월드컵 골든볼 수상자로는 디에고 마라도나(1979년), 리오넬 메시(2005년), 폴 포그바(2013년) 등 나중에 세계 축구의 스타로 성장한 인물들이 있다.20살 이하 대표팀의 막내 이강인은 이번 대회 7경기에서 2골4도움주기를 기록하면서 한국의 결승행을 이끌었다. 한국의 공격은 이강인의 발끝에서 시작했다고 해도 과언이 아니다. 공을 잡으면 폭넓은 시야를 바탕으로 한 정확한 왼발 킥으로 상대 수비를 무너뜨렸고, 예리한 패스와 리듬감을 살린 그의 공격 조율은 한국의 주요 득점로가 됐다.8강전 세네갈전에서는 페널티킥 동점골로 추격의 발판을 만드는 강심장을 보여주었고, 4강 에콰도르전에서는 최준의 결승골로 연결된 환상적인 패스로 세계 축구팬들한테도 강한 인상을 남겼다.이날 결승전에서는 체력난 탓인지 기동력은 떨어져 보였다. 하지만 전반 얻은 페널티킥의 키커로 나서 확실하게 득점을 해 주었고, 프리킥과 코너킥을 전담하면서 여러 차례 위협적인 장면을 연출했다. 측면과 구석에서 올려준 그의 공은 김세윤, 이재익, 오세훈 등 헤딩 능력이 있는 선수들을 향해 정확하게 날아갔다.이강인이 우승팀인 우크라이나의 플레이메이커 블레차 등을 따돌리고 골든볼을 수상한 것은 결승까지 그가 보여준 활약이 강렬했음을 입증한다. 그의 잠재력을 본 스페인 프리메라리가의 레반테, 네덜란드의 아약스 암스테르담, PSV 에인트호번 등이 그에게 관심을 보이고 있다는 보도도 있다.형들보다 두 살이나 적은 이강인은 발전 가능성이 무궁무진한 만큼 앞으로가 더 주목된다. 안정환 해설위원은 “더 큰 재목으로 성장했으면 좋겠다”는 바람을 드러냈다.',
+                                            minLength: 2
+                                        }
+                                    };
+                             
+                                    zingchart.render({
+                                        id: 'myChart',
+                                        data: myConfig,
+                                        height: 400,
+                                        width: '100%'
+                                    });
+                                </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer style="background-color: #000000; color: #ffffff">
+            <div class="container">
+                <br>
+                <div class="row">
+                    <div class="col-sm-2" style="text-align: center;"><h5>Copyright &copy; 2019</h5><h5>지영현(YoungHyun Ji)</h5></div>
+                    <div class="col-sm-4"><h4>대표자 소개</h4><p>저는 코딩 부스터의 학생 지영현입니다. 졸업작품을 빡쎄게 조지고 있습니다.</p></div>
+                    <div class="col-sm-2"><h4 style="text-align: center;">내비게이션</h4>
+                        <div class="list-group">
+                            <a href="index.html" class="list-group-item">소개</a>
+                            <a href="insturctor.html" class="list-group-item">강사진</a>
+                            <a href="lecture.html" class="list-group-item">강의</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"><h4 style="text-align: center;">SNS</h4>
+                        <div class="list-group">
+                            <a href="https://www.facebook.com/dongbin.na" class="list-group-item">페이스북</a>
+                            <a href="https://www.youtube.com" class="list-group-item">유튜브</a>
+                            <a href="https://www.naver.com" class="list-group-item">네이버</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;by 지영현</h4></div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+    </html>
+
